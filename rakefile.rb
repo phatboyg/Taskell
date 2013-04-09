@@ -13,7 +13,8 @@ props = {
   :output => File.expand_path("build_output"),
   :artifacts => File.expand_path("build_artifacts"),
   :projects => ["Taskell"],
-  :lib => File.expand_path("lib")
+  :lib => File.expand_path("lib"),
+  :keyfile => File.expand_path("Taskell.snk")
 }
 
 desc "Cleans, compiles, il-merges, unit tests, prepares examples, packages zip"
