@@ -74,13 +74,9 @@ end
 
 desc "Only compiles the application for .NET 4.5 FX CORE."
 msbuild :build_net45fx do |msb|
-  msb.properties :Configuration => "Release",
-    :DefineConstants => 'TRACE,NETFX_CORE',
-    :Platform => 'Any CPU',
-    :TargetFrameworkVersion => "v4.5",
+  msb.properties :Configuration => "Release45",
     :SignAssembly => 'true',
-    :AssemblyOriginatorKeyFile => props[:keyfile],
-    :OutputPath => File.join(props[:src], "Taskell/bin/Release/win8")
+    :AssemblyOriginatorKeyFile => props[:keyfile]
   msb.use :net4
   msb.targets :Clean, :Build
   msb.solution = 'src/Taskell/Taskell.csproj'
